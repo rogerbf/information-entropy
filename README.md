@@ -1,6 +1,6 @@
 # information-entropy
 
-Calculate the information entropy.
+Calculate the information entropy. Based on a Wikipedia article about  [password strength](https://en.wikipedia.org/wiki/Password_strength).
 
 ``` shell
 npm install information-entropy
