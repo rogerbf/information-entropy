@@ -1,7 +1,7 @@
 {
   "name": "information-entropy",
   "version": "0.0.1",
-  "description": "",
+  "description": "calculate information entropy",
   "main": "./dist/index.js",
   "scripts": {
     "test": "babel-node ./src/index.test.js | faucet",
@@ -38,5 +38,13 @@
       "es2015"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/information-entropy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/information-entropy/issues"
+  },
+  "homepage": "https://github.com/rogerbf/information-entropy#readme"
 }
