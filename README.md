@@ -7,17 +7,21 @@ The result of these calculations assumes that the password generator uses a trul
 ## usage
 
 ```javascript
-const { calculateEntropy, calculateLength, symbolSets } = require(`information-entropy`)
+const { calculateEntropy, calculateLength } = require(`information-entropy`)
+
+const symbolSets = {
+  hexadecimalNumerals: 16,
+  asciiPrintableCharacters: 95,
+  custom: [ `a`, `b`, 2 ]
+}
 
 const passwordLength = 24
-calculateEntropy(symbolSets.hexadecimalNumerals, passwordLength)
+calculateEntropy(symbolSet.hexadecimalNumerals, passwordLength)
 // 96
 
 const entropy = 128
-calculateLength(symbolSets.asciiPrintableCharacters, entropy)
+calculateLength(symbolSet.asciiPrintableCharacters, entropy)
 // 20
-
-const customSymbolSet = [ `a`, `b`, 2 ]
 calculateLength(customSymbolSet, entropy)
 // 81
 ```

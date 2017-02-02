@@ -42,20 +42,7 @@ function calculateLength (symbols, entropy) {
   return lengthFromEntropy(setSize, entropy)
 }
 
-const symbolSets = {
-  arabicNumerals: 10,
-  hexadecimalNumerals: 16,
-  caseInsensitiveLatinAlphabet: 26,
-  caseInsensitiveAlphanumeric: 36,
-  caseSensitiveLatinAlphabet: 52,
-  caseSensitiveAlphanumeric: 62,
-  asciiExcludingSpace: 94,
-  asciiPrintableCharacters: 95,
-  extendedAsciiPrintableCharacters: 218
-}
-
 module.exports = {
   calculateEntropy,
-  calculateLength,
-  symbolSets
+  calculateLength
 }
