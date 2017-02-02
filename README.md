@@ -1,24 +1,37 @@
 # information-entropy
 
-Calculate the information entropy. Based on a Wikipedia article about  [password strength](https://en.wikipedia.org/wiki/Password_strength).
+Calculate the required length or the entropy of a password. Inspired by the following Wikipedia article on [password strength](https://en.wikipedia.org/wiki/Password_strength).
 
-``` shell
-npm install information-entropy
+The result of these calculations assumes that the password generator uses a truly random selection process, where each symbol is randomly drawn from the set.
+
+## usage
+
+```javascript
+const { calculateEntropy, calculateLength, symbolSets } = require(`information-entropy`)
+
+const passwordLength = 24
+calculateEntropy(symbolSets.hexadecimalNumerals, passwordLength)
+// 96
+
+const entropy = 128
+calculateLength(symbolSets.asciiPrintableCharacters, entropy)
+// 20
+
+const customSymbolSet = [ `a`, `b`, 2 ]
+calculateLength(customSymbolSet, entropy)
+// 81
 ```
 
-## Usage
+## api
 
-``` javascript
-const password = require('information-entropy')
+### `calculateEntropy(symbolSet, passwordLength)`
 
-const symbolSet = ['a', 'b', 'c']
-const passwordLength = 6
+Returns entropy in bits.
 
-password.calculateEntropy(symbolSet.length, passwordLength)
-// 10 (bits)
+`symbolSet` and `passwordLength` can be anything with a `.length` property or a number denoting a length.
 
-const desiredEntropy = 128
+### `calculateLength(symbolSet, bitsOfEntropy)`
 
-password.calculateLength(symbolSet.length, desiredEntropy)
-// 81 (symbols)
-```
+Returns the required number of random selections from the set.
+
+`symbolSet` can be anything with a `.length` property or a number denoting a size. `bitsOfEntropy` must be a number.

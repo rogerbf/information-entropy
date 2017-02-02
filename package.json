@@ -1,50 +1,36 @@
 {
   "name": "information-entropy",
-  "version": "0.0.1",
-  "description": "calculate information entropy",
-  "main": "./dist/index.js",
+  "version": "1.0.0",
+  "description": "calculate the required length or the entropy of a password",
+  "main": "index.js",
   "scripts": {
-    "test": "babel-node ./src/index.test.js | faucet",
-    "prebuild": "npm test && rimraf dist",
-    "build": "babel --ignore *.test.js --out-dir dist src",
-    "prepublish": "npm run build",
-    "watch:test": "nodemon -x 'npm test'"
+    "test": "jest --config .jest",
+    "start": "node index.js",
+    "watch:start": "chokidar \"*.js\" \"./**/*.js\" -c \"npm run start\"",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix .",
+    "watch:test": "jest --config .jest --watch",
+    "coverage": "jest --config .jest --coverage",
+    "watch:coverage": "jest --config .jest --coverage --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "password",
+    "password length",
+    "entropy",
+    "password entropy",
+    "password strength",
+    "passphrase",
+    "passphrase strength"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "6.11.4",
-    "babel-preset-es2015": "6.13.2",
-    "faucet": "0.0.1",
-    "nodemon": "1.10.0",
-    "rimraf": "2.5.4",
-    "tape": "4.6.0"
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^3.14.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "jest-cli": "^18.1.0"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 6
-    }
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "dependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rogerbf/information-entropy.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rogerbf/information-entropy/issues"
-  },
-  "homepage": "https://github.com/rogerbf/information-entropy#readme"
+  "dependencies": {}
 }

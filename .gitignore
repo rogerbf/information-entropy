@@ -1,6 +1,6 @@
 node_modules
-dist
 .DS_Store
 package
 information-entropy*.tgz
 npm-debug.log
+coverage
