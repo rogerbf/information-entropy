@@ -26,7 +26,7 @@ calculateLength(customSymbolSet, entropy)
 
 ### `calculateEntropy(symbolSet, passwordLength)`
 
-Returns entropy in bits.
+Returns the entropy in bits.
 
 `symbolSet` and `passwordLength` can be anything with a `.length` property or a number denoting a length.
 
